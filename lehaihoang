@@ -1,0 +1,185 @@
+<script>
+    <!--
+    document.write(unescape("<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiển Thị Hình Ảnh, Âm Thanh và Video</title>
+    <style>
+        /* Hiệu ứng đổi màu body với các màu bạn cung cấp */
+        @keyframes gradientBackground {
+            0% {
+                background-color: #EEEEEE;
+            }
+            33% {
+                background-color: #DDDDDD;
+            }
+            66% {
+                background-color: #CCCCCC;
+            }
+            100% {
+                background-color: #BBBBBB;
+            }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            animation: gradientBackground 10s infinite;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            color: #5F9EA0; /* Màu chữ xanh biển */
+            max-width: 70%;
+        }
+
+        h1 {
+            color: #0066cc; /* Màu xanh biển đậm */
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3),
+                -2px -2px 5px rgba(255, 255, 255, 0.3);
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .box {
+            background: #ffffff;
+            border: 2px solid #ffc0cb;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 10px rgba(0, 0, 0, 0.05);
+            padding: 10px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .box img,
+        .box video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .box audio {
+            width: 100%;
+        }
+
+        .text-box {
+            font-size: 16px;
+            color: #5F9EA0; /* Màu chữ xanh biển */
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .intro-container {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 5px;
+            max-width: 300px;
+            margin-left: 0;
+        }
+
+        .intro-box {
+            background: #fff0f5;
+            border: 2px solid #ffc0cb;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 10px rgba(0, 0, 0, 0.05);
+            padding: 10px;
+            text-align: left;
+            font-size: 16px;ss
+            font-weight: bold;
+            color: #5F9EA0; /* Màu chữ xanh biển */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+        }
+
+        .intro-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Đổi màu chữ footer thành màu đỏ */
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.3);
+            color: red; /* Màu chữ đỏ */
+            font-size: 12px;
+            border-radius: 10px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hình Ảnh, Âm Thanh và Video</h1>
+    <div class="container">
+        <!-- Khung hình ảnh -->
+        <div class="box">
+            <div class="text-box">Chúc Mừng Ngày Nhà Giáo Việt Nam!</div>
+            <img src="https://i.ibb.co/M8Kbg3F/4ad684ddb43e0f60562f.jpg" alt="Hình ảnh đẹp">
+        </div>
+        <!-- Khung âm thanh -->
+        <div class="box">
+            <div class="text-box">Lắng nghe bài hát về ngày Nhà Giáo Việt Nam</div>
+            <audio controls>
+                <source src="https://data.phukhuong79.com/music/loithayco.mp3" type="audio/mp3">
+                Trình duyệt của bạn không hỗ trợ thẻ âm thanh.
+            </audio>
+        </div>
+        <!-- Khung video -->
+        <div class="box">
+            <div class="text-box">Video về ngày 20/11</div>
+            <video controls>
+                <source src="https://data.phukhuong79.com/music/1054751943888716447.mp4" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ thẻ video.
+            </video>
+        </div>
+    </div>
+
+    <!-- Khung giới thiệu -->
+    <div class="intro-container">
+        <div class="intro-box">Họ Tên: Hoàng Lê</div>
+        <div class="intro-box">Lớp: 12A</div>
+        <div class="intro-box">Trường: THPT Văn Lang</div>
+        <div class="intro-box">Năm Sinh: 2007</div>
+    </div>
+
+    <footer>
+        &copy; 2024 - Trang web được tạo bởi Hoàng Lê | Tất cả bản quyền được bảo lưu trên server của Hoàng Lê.
+    </footer>
+
+    <script>
+        // Chặn chuột phải
+        document.addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+        });
+
+        // Chặn F12 và các phím developer tools
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "F12" || (e.ctrlKey && (e.key === "I" || e.key === "U" || e.key === "J"))) {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+
+</html>
+"));
+    //-->
+    <!--Không làm mà đòi có ăn cơ à -->
+    </script>
